@@ -1,0 +1,2 @@
+./build/AdvancedConfigurationExample/AdvancedConfigurationExample publisher --transport=tcp -m 1000000
+./build/AdvancedConfigurationExample/AdvancedConfigurationExample subscriber --transport=tcp
