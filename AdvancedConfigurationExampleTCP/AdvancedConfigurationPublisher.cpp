@@ -386,6 +386,5 @@ void HelloWorldPublisher::run(
 void HelloWorldPublisher::publish()
 {
     hello_.index(hello_.index() + 1);
-    bool msg_sent = writer_->write(&hello_);
-    std::cout << "Message sent? " << (msg_sent ? "Yes" : "No") << std::endl;
+    writer_->write(&hello_);
 }
