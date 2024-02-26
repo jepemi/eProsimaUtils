@@ -121,6 +121,10 @@ bool HelloWorldPublisher::init(
                     auto tcp_transport = std::make_shared<TCPv4TransportDescriptor>();
                     tcp_transport->add_listener_port(tcp_port);
                     tcp_transport->set_WAN_address(tcp_address);
+                    tcp_transport->calculate_crc = false;
+                    tcp_transport->check_crc = false;
+                    tcp_transport->apply_security = false;
+                    tcp_transport->enable_tcp_nodelay = true;
                     pqos.transport().user_transports.push_back(tcp_transport);
                 }
                 break;
