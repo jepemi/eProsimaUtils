@@ -223,7 +223,7 @@ bool HelloWorldPublisher::init(
     {
         wqos.reliability().kind = RELIABLE_RELIABILITY_QOS;
         wqos.history().kind = KEEP_LAST_HISTORY_QOS;
-        wqos.history().depth = 2;
+        wqos.history().depth = 30;
     }
     else
     {
@@ -234,8 +234,9 @@ bool HelloWorldPublisher::init(
     if (transient)
     {
         wqos.durability().kind = TRANSIENT_LOCAL_DURABILITY_QOS;
-        wqos.history().kind = KEEP_ALL_HISTORY_QOS;     // store previously sent samples so they can be resent to newly
+        wqos.history().kind = KEEP_LAST_HISTORY_QOS;     // store previously sent samples so they can be resent to newly
                                                         // matched DataReaders
+        wqos.history().depth = 30;
     }
     else
     {
