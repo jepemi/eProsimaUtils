@@ -14,7 +14,7 @@
 
 cmake_minimum_required(VERSION 3.20)
 
-project(AdvancedConfigurationExample VERSION 1 LANGUAGES CXX)
+project(AdvancedConfigurationExampleTCP VERSION 1 LANGUAGES CXX)
 
 # Find requirements
 if(NOT fastcdr_FOUND)
