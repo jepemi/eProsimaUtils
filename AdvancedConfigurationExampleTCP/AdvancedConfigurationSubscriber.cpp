@@ -108,10 +108,10 @@ bool HelloWorldSubscriber::init(
                 case TCPv4:
                 {
                     auto tcp_transport = std::make_shared<TCPv4TransportDescriptor>();
-                    tcp_transport->calculate_crc = false;
-                    tcp_transport->check_crc = false;
-                    tcp_transport->apply_security = false;
-                    tcp_transport->enable_tcp_nodelay = true;
+                    // tcp_transport->calculate_crc = false;
+                    // tcp_transport->check_crc = false;
+                    // tcp_transport->apply_security = false;
+                    // tcp_transport->enable_tcp_nodelay = true;
                     pqos.transport().user_transports.push_back(tcp_transport);
                     eprosima::fastrtps::rtps::Locator_t initial_peer_locator;
                     initial_peer_locator.kind = LOCATOR_KIND_TCPv4;
@@ -216,7 +216,7 @@ bool HelloWorldSubscriber::init(
     {
         rqos.reliability().kind = RELIABLE_RELIABILITY_QOS;
         rqos.history().kind = KEEP_LAST_HISTORY_QOS;
-        rqos.history().depth = 30;
+        rqos.history().depth = 1;
     }
     else
     {
